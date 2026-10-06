@@ -4,13 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop Paradise</title>
-    <!-- Estilos CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Íconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Ventana Modal de Autenticación (Login + Registro) -->
+    <div id="modal-auth" class="modal-auth">
+        <div class="auth-box">
+            <!-- Pestañas de Navegación -->
+            <div class="auth-tabs">
+                <button id="tab-login" class="tab-btn active" onclick="cambiarTab('login')">Iniciar Sesión</button>
+                <button id="tab-registro" class="tab-btn" onclick="cambiarTab('registro')">Registrarse</button>
+            </div>
+
+            <!-- Formulario de Iniciar Sesión -->
+            <form id="form-login" class="auth-form active">
+                <h2>🐾 Bienvenido de nuevo</h2>
+                <p>Ingresa tus credenciales para acceder</p>
+                <input type="text" id="login-usuario" placeholder="Usuario (ej. admin)" required>
+                <input type="password" id="login-password" placeholder="Contraseña (ej. 1234)" required>
+                <button type="submit" class="btn-crud btn-guardar">Ingresar</button>
+            </form>
+
+            <!-- Formulario de Registro -->
+            <form id="form-registro" class="auth-form">
+                <h2>🐾 Crear Cuenta</h2>
+                <p>Registra tus datos para ingresar al sistema</p>
+                <input type="text" id="reg-usuario" placeholder="Crea un nombre de usuario" required>
+                <input type="password" id="reg-password" placeholder="Crea una contraseña" required>
+                <input type="password" id="reg-password-confirm" placeholder="Confirma tu contraseña" required>
+                <button type="submit" class="btn-crud btn-guardar">Registrarse</button>
+            </form>
+
+            <p id="msg-auth" class="auth-msg" style="display: none;"></p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
     <header>
         <nav class="navbar">
             <h1>🐾 PetShop Paradise</h1>
@@ -21,6 +52,10 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li class="user-info">
+                    <span id="user-display">👤 Admin</span>
+                    <button id="btn-logout" class="btn-logout">Salir</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -33,7 +68,7 @@
         </div>
     </section>
 
-    <!-- Formulario Simplificado (CRUD) -->
+    <!-- Formulario CRUD -->
     <section id="admin-productos">
         <h2 class="titulo">Administrar Productos (CRUD)</h2>
         
@@ -54,28 +89,23 @@
     <!-- Catálogo de Productos -->
     <section id="productos">
         <h2 class="titulo">Productos Destacados</h2>
-        <div class="cards" id="contenedor-productos">
-            <!-- Los productos se generan dinámicamente -->
-        </div>
+        <div class="cards" id="contenedor-productos"></div>
     </section>
 
     <!-- Servicios -->
     <section id="servicios">
         <h2 class="titulo">Nuestros Servicios</h2>
-
         <div class="servicios-grid">
             <div class="servicio">
                 <i class="fas fa-paw"></i>
                 <h3>Estética</h3>
                 <p>Baño y corte profesional.</p>
             </div>
-
             <div class="servicio">
                 <i class="fas fa-heartbeat"></i>
                 <h3>Veterinaria</h3>
                 <p>Consultas y atención médica.</p>
             </div>
-
             <div class="servicio">
                 <i class="fas fa-dog"></i>
                 <h3>Guardería</h3>
@@ -87,16 +117,12 @@
     <!-- Nosotros -->
     <section id="nosotros" class="nosotros">
         <h2 class="titulo">¿Quiénes Somos?</h2>
-        <p>
-            PetShop Paradise es una empresa dedicada al bienestar animal,
-            ofreciendo productos de calidad y servicios especializados para perros y gatos.
-        </p>
+        <p>PetShop Paradise es una empresa dedicada al bienestar animal, ofreciendo productos de calidad y servicios especializados para perros y gatos.</p>
     </section>
 
     <!-- Contacto -->
     <section id="contacto">
         <h2 class="titulo">Contáctanos</h2>
-
         <form id="form-contacto">
             <input type="text" placeholder="Nombre" required>
             <input type="email" placeholder="Correo" required>
@@ -109,12 +135,11 @@
         <p>© 2026 PetShop Paradise | Proyecto Escolar</p>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp -->
+    <!-- Botón WhatsApp -->
     <a href="https://wa.me/1234567890" class="whatsapp" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
