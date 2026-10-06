@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fa;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #1e88e5;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.navbar a:hover {
+    color: #ffcc80;
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, .6);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: #ff9800;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #e68a00;
+}
+
+/* Secciones */
+section {
+    padding: 60px 10%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Formulario CRUD */
+#admin-productos {
+    background: #e3f2fd;
+    border-bottom: 2px solid #bbdefb;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-crud {
+    padding: 12px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.2s;
+    flex: 1;
+}
+
+.btn-guardar { background: #1e88e5; }
+.btn-guardar:hover { background: #1565c0; }
+
+.btn-cancelar { background: #757575; }
+.btn-cancelar:hover { background: #616161; }
+
+/* Tarjetas de Productos */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    transition: transform .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3, .card p {
+    padding: 8px 15px 0 15px;
+}
+
+.card .precio {
+    color: #ff9800;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card .stock {
+    color: #2e7d32;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-acciones {
+    display: flex;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.btn-editar {
+    background: #ffa726;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-eliminar {
+    background: #ef5350;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-carrito {
+    margin: 0 15px 15px 15px;
+    padding: 10px;
+    border: none;
+    background: #1e88e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Servicios */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.servicio {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.servicio i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #1e88e5;
+}
+
+.nosotros {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+footer {
+    background: #1e88e5;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* Botón WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}

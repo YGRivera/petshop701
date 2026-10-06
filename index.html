@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Paradise</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Íconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1>🐾 PetShop Paradise</h1>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#admin-productos">Administrar</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Todo para consentir a tu mascota</h2>
+            <p>Alimentos, accesorios, veterinaria y mucho más.</p>
+            <a href="#productos" class="btn">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Formulario Simplificado (CRUD) -->
+    <section id="admin-productos">
+        <h2 class="titulo">Administrar Productos (CRUD)</h2>
+        
+        <form id="form-producto">
+            <input type="hidden" id="producto-id">
+            
+            <input type="text" id="producto-nombre" placeholder="Nombre del producto" required>
+            <input type="number" id="producto-precio" placeholder="Precio (MXN)" step="0.01" required>
+            <input type="number" id="producto-stock" placeholder="Cantidad en Stock" min="0" required>
+            
+            <div class="btn-group">
+                <button type="submit" id="btn-guardar" class="btn-crud btn-guardar">Guardar Producto</button>
+                <button type="button" id="btn-cancelar" class="btn-crud btn-cancelar" style="display: none;">Cancelar</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <section id="productos">
+        <h2 class="titulo">Productos Destacados</h2>
+        <div class="cards" id="contenedor-productos">
+            <!-- Los productos se generan dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <h2 class="titulo">Nuestros Servicios</h2>
+
+        <div class="servicios-grid">
+            <div class="servicio">
+                <i class="fas fa-paw"></i>
+                <h3>Estética</h3>
+                <p>Baño y corte profesional.</p>
+            </div>
+
+            <div class="servicio">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Veterinaria</h3>
+                <p>Consultas y atención médica.</p>
+            </div>
+
+            <div class="servicio">
+                <i class="fas fa-dog"></i>
+                <h3>Guardería</h3>
+                <p>Cuidado temporal de mascotas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="nosotros">
+        <h2 class="titulo">¿Quiénes Somos?</h2>
+        <p>
+            PetShop Paradise es una empresa dedicada al bienestar animal,
+            ofreciendo productos de calidad y servicios especializados para perros y gatos.
+        </p>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2 class="titulo">Contáctanos</h2>
+
+        <form id="form-contacto">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Escribe tu mensaje" rows="4" required></textarea>
+            <button type="submit" class="btn-crud btn-guardar">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 PetShop Paradise | Proyecto Escolar</p>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/1234567890" class="whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
